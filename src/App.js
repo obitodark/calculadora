@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import { createContext, useState } from "react";
+import Themes from "./context/themeProvider";
+
+import Router from "./router";
+// import { theme01, theme02 } from "./styles/theme";
+// import styled, { ThemeProvider } from "styled-components";
+// export const ThemeContext = createContext(null);
 
 function App() {
+  // const [theme, setTheme] = useState("theme01");
+
+  // const themeStyle = theme === "theme01" ? theme01 : theme02;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {/* <ThemeContext.Provider value={{ setTheme, theme }}>
+        <ThemeProvider theme={themeStyle}> */}
+
+      {/* <Container> */}
+      <Themes>
+        <Router />
+      </Themes>
+
+      {/* </Container> */}
+      {/* </ThemeProvider>
+      </ThemeContext.Provider> */}
+    </>
   );
 }
 
 export default App;
+
+// const Container = styled.div`
+//   background: ${({ theme }) => theme.body};
+//   width: 100vw;
+//   height: 100vh;
+// `;
